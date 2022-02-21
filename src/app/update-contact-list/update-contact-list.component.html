@@ -1,0 +1,50 @@
+<!-- <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)">
+    <div>
+        <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="firstname"> 
+        <label for="float-input">First Name</label>
+    </span>
+    
+    </div>
+    <div>
+        <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="lastName" > 
+        <label for="float-input">Last Name</label>
+    </span>
+    </div>
+    <div>
+        <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="phone" > 
+        <label for="float-input">Phone</label>
+    </span>
+    </div>
+    <p-button label="Submit" [disabled]="!contactForm.valid"></p-button>
+</form> -->
+
+<div class="card">
+    <div class="ui-fluid">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)">
+            <div class="p-field">
+                <label for="input">First Name</label>
+                <input id="float-input" type="text" pInputText formControlName="firstname">
+                <small id="username2-help" class="p-error block" *ngIf="!contactForm.controls['firstname']?.valid && (contactForm.controls['firstname']?.dirty
+                ||contactForm.controls['firstname']?.touched)">First Name is Required.</small>
+            </div>
+            <div class="p-field">
+                <label for="input">Last Name</label>
+                <input id="float-input" type="text" pInputText formControlName="lastName">
+                <small id="username2-help" class="p-error block" *ngIf="!contactForm.controls['lastName']?.valid && (contactForm.controls['lastName']?.dirty
+                ||contactForm.controls['lastName']?.touched)">Last Name is Required.</small>
+            </div>
+            <div class="p-field">
+                <label for="input">Phone</label>
+                <input id="float-input" type="text" pInputText formControlName="phone">
+                <small id="username2-help" class="p-error block" *ngIf="!contactForm.controls['phone']?.valid && (contactForm.controls['phone']?.dirty
+                ||contactForm.controls['phone']?.touched)">Phone is required / wrong</small>
+            </div>
+            <div class="p-element">
+                <button [disabled]="!contactForm.valid">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

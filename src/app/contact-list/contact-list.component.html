@@ -1,0 +1,27 @@
+<div class="container-list">
+    <div class="add-contact-btn">
+        <p-button label="Add Contact" (click)="AddContact()"></p-button>
+    </div>
+    <p-table [value]="contactList">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-contact>
+            <tr>
+                <td>{{contact.id}}</td>
+                <td>{{contact.firstName}}</td>
+                <td>{{contact.lastName}}</td>
+                <td>{{contact.phone}}</td>
+                <td (click)="editContact(contact)"><i class="pi pi-user-edit icon"></i></td>
+                <td><i class="pi pi-trash icon" (click)="deleteContact(contact.id)"></i></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
